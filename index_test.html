@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>Titlte goes here</title>
+		<link rel="stylesheet" type="text/css" href="./Styles/style.css">
+		<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
+
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+	</head>
+	<body>
+
+
+
+		<!-- <div>
+			<p>Earlier this week someone came into my office at work and asked to borrow three of our beanbags, so they could have recently returned astronauts sit in them while doing a facebook live-stream event. Apparently, it has become tradition. That prompted me to google ISS fly over application. I heard NASA had put out the code that runs their "check when the International Space Station will be in view from your location" webpage. Unfortunately, my impression wasn't quite correct. What was provided wasn't the code for their webpage or the application that does the calculations but merely an embed code snippet that lets you put an iframe in your own webpage to theirs. Basically, it is a well-built window from this webpage into their webpage.</p>
+		</div> -->
+<!-- 
+		<div><p>Embed code snippet = </p></div>
+		<blockquote>
+			<span style="color: #ff6600;">&lt;div</span> <span style="color: #008000;">style="display: inline-block; border: 1px solid #CCC; border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; position: relative; overflow: hidden; width: 310px; height: 450px;</span>"<span style="color: #ff6600;">&gt;&lt;iframe</span> <span style="color: #ff6600;">src=</span>"<span style="color: #800080;">https://spotthestation.nasa.gov/widget/widget.cfm?country=United_States&amp;amp;region=Texas&amp;amp;city=Houston</span>" <span style="color: #008000;">width="310" height="450" frameborder="0"</span>&gt;<span style="color: #ff6600;">&lt;/iframe&gt;&lt;/div&gt;</span>
+		</blockquote> -->
+
+		<!-- <div>
+			<p><span style="color: #ff6600;">Orange</span> = HTML, the pieces that make up the webpage. Boxes inside boxes with rules about where those boxes sit and move.</p>
+
+			<p><span style="color: #800080;">Purple</span> = URL, or address the browser goes to in order to ask politely for the NASA data to build the little ISS flyover screen.</p>
+
+			<p><span style="color: #008000;">Green</span> = CSS, the style rules.</p>
+		</div> -->
+
+		<!-- <div style="display: block; margin: 0 auto; text-align: center; border: 1px solid #CCC; border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; position: relative; overflow: hidden; width: 310px; height: 450px;"><iframe src="https://spotthestation.nasa.gov/widget/widget.cfm?country=United_States&amp;region=Texas&amp;city=Houston" width="310" height="450" frameborder="0"></iframe></div> -->
+
+		<!-- <p>The ISS is currently over <span id="isslat">?</span>&deg; N, <span id="isslon">?</span>&deg; E</p> -->
+
+		<!-- <div id="mapid" class="center"></div> -->
+
+		<!-- <p>nothing important</p> -->
+
+		<!-- <div id="mapidB" class="maps center"></div>
+		</br> -->
+
+		<div id="mapidC" class="maps center"></div>
+
+		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+		<script src="JS/script.js"></script>
+
+<!-- 		<script>
+			var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+			L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}',
+			{
+		    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		    maxZoom: 18,
+		    level: 5,
+		    id: 'jgosses',
+		    accessToken: 'pk.eyJ1Ijoiamdvc3NlcyIsImEiOiJjaWk2aWhua2kwMWxidDBrZndhbHBraTd1In0.IIT7dwztvQhH9ZsiOLmnMg'
+		}).addTo(mymap);
+		</script>
+
+		<script>
+		function getISS () {
+		    $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+		        var lat = data['iss_position']['latitude'];
+		        var lon = data['iss_position']['longitude'];
+		        $('#isslat').html(Math.round(lat*1000)/1000.0);
+		        $('#isslon').html(Math.round(lon*1000)/1000.0);
+		    });
+    	setTimeout(getISS, 3000); 
+		}
+		getISS();
+		</script> -->
+		<p>marker</p>
+	</body>
+</html>

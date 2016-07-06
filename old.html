@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>Titlte goes here</title>
+		<link rel="stylesheet" type="text/css" href="/Styles/style.css">
+		<link rel="stylesheet" type="text/css" href="./Styles/style.css">
+		<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
+	</head>
+	<body>
+
+	<a href="index_test.html">test</a>
+
+		<div style='display:inline-block; border: 1px solid #CCC; border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; position: relative; overflow: hidden; width: 310px; height: 450px;'>
+			<iframe src='https://spotthestation.nasa.gov/widget/widget.cfm?country=United_States&region=Texas&city=Houston' width='310' height='450' frameborder='0' >
+				
+			</iframe>
+		</div>
+
+
+		<p>The ISS is currently over <span id="isslat">?</span>&deg; N, <span id="isslon">?</span>&deg; E</p>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+		<script>
+		function getISS () {
+		    $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+		        var lat = data['iss_position']['latitude'];
+		        var lon = data['iss_position']['longitude'];
+		        $('#isslat').html(Math.round(lat*1000)/1000.0);
+		        $('#isslon').html(Math.round(lon*1000)/1000.0);
+		    });
+    	setTimeout(getISS, 3000); 
+		}
+		getISS();
+		</script>
+
+
+
+	</body>
+</html>
