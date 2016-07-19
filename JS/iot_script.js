@@ -1,35 +1,6 @@
-var map_1 = {"issLat":0,"issLong":0}
+var map_1 = {"issLat":10,"issLong":10}
 var ISSmarkers = [];
 var mymap3;
-
-
-function addLatLongToMap(json){
-	
-    var lat = "20"
-    var long = "20"
-    //     var lat = parseFloat(json[i]["values"]["resp_latitude"]);
-    // var long = parseFloat(json[i]["values"]["resp_longitude"]);
-    if (lat || long !== "") {
-    	console.log("lat =",lat);
-    	console.log("type of lat =",typeof(lat));
-    	lat2 = parseFloat(lat);
-        long2 = parseFloat(long);
-        console.log("2 long =",long2);
-    	console.log("2 type of long =",typeof(long2));
-    // if (lat && long !== 0 || lat && long !== "") {
-
-
-		marker = new L.marker(lat2,long2)
-		// .bindPopup(planes[i][0])
-		.addTo(mymap3);
-
-    	// marker2A = L.marker(lat2, long2).addTo(mymap3);
-    	//// marker2A = L.marker([map_1["issLat"], map_1["issLong"]]).addTo(mymap3);
-    	console.log("3 lat =",lat);
-    	console.log("3 type of lat =",typeof(lat));
-    	
-	}
-}
 
 
 // function getISS () {
@@ -68,27 +39,27 @@ var mymap3 = L.map('mapidC').setView([map_1["issLat"], map_1["issLong"]], 1);
 
 
 
-// function addLatLongToMap(json){
-// 	for (i = 0; i < json.length; i++) { 
-//     var lat = json[i]["values"]["resp_latitude"];
-//     var long = json[i]["values"]["resp_longitude"];
-//     //     var lat = parseFloat(json[i]["values"]["resp_latitude"]);
-//     // var long = parseFloat(json[i]["values"]["resp_longitude"]);
-//     if (lat || long !== "") {
-//     	console.log("lat =",lat);
-//     	console.log("type of lat =",typeof(lat));
-//     	lat = parseFloat(lat);
-//         long = parseFloat(long);
-//         console.log("2 long =",long);
-//     	console.log("2 type of long =",typeof(long));
-//     // if (lat && long !== 0 || lat && long !== "") {
-//     	marker2A =L.marker(lat, long).addTo(mymap3);
-//     	// marker2A = L.marker([map_1["issLat"], map_1["issLong"]]).addTo(mymap3);
-//     	console.log("3 lat =",lat);
-//     	console.log("3 type of lat =",typeof(lat));
-//     	}
-// 	}
-// }
+function addLatLongToMap(json){
+	for (i = 0; i < json.length; i++) { 
+    var lat = json[i]["values"]["resp_latitude"];
+    var long = json[i]["values"]["resp_longitude"];
+    //     var lat = parseFloat(json[i]["values"]["resp_latitude"]);
+    // var long = parseFloat(json[i]["values"]["resp_longitude"]);
+    if (lat || long !== "") {
+    	console.log("lat =",lat);
+    	console.log("type of lat =",typeof(lat));
+    	lat = parseFloat(lat);
+        long = parseFloat(long);
+        console.log("2 long =",long);
+    	console.log("2 type of long =",typeof(long));
+    // if (lat && long !== 0 || lat && long !== "") {
+    	marker2A =L.marker([lat, long]).addTo(mymap3);
+    	// marker2A = L.marker([map_1["issLat"], map_1["issLong"]]).addTo(mymap3);
+    	console.log("3 lat =",lat);
+    	console.log("3 type of lat =",typeof(lat));
+    	}
+	}
+}
 
 
 
